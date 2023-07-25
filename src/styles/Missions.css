@@ -1,3 +1,7 @@
+.hide {
+  display: none;
+}
+
 .missions {
   /* border: 1px solid green; */
   width: 80%;
@@ -59,4 +63,20 @@ span {
   background-color: transparent;
   cursor: pointer;
   padding: 10px;
+}
+
+.active-member {
+  background-color: aqua;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.not-active-member {
+  background-color: gray;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.join-mission {
+  display: block;
 }

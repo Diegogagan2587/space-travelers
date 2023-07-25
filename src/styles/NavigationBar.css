@@ -2,10 +2,6 @@ li {
   list-style: none;
 }
 
-a {
-  text-decoration: none;
-}
-
 .navigation-bar {
   width: 80%;
   margin: 0 auto;
@@ -34,3 +30,4 @@ h1 {
   align-items: center;
   column-gap: 1rem;
 }
+

@@ -14,7 +14,7 @@ const NavigationBar = () => {
       <ul className='right'>
         <li>
           <NavLink
-            to="/"
+            to="/rockets"
             className={({ isActive}) =>
              isActive ? "active" : ""
             }

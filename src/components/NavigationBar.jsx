@@ -13,10 +13,10 @@ const NavigationBar = () => {
           <a href="/">Rockets</a>
         </li>
         <li>
-          <a href="/about">Missions</a>
+          <a href="/missions">Missions</a>
         </li>
         <li>
-          <a href="/contact">My Profile</a>
+          <a href="/my-profile">My Profile</a>
         </li>
       </ul>
     </nav>

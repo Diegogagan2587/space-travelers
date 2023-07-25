@@ -4,12 +4,12 @@ const missionsArray = [
   {
     name: 'Thaicom',
     description: 'Thaicom is the name of a series of communications satellites operated from Thailand, and also the name of Thaicom Public Company Limited, which is the company that owns and operates the Thaicom satellite fleet and other telecommunication businesses in Thailand and throughout the Asia-Pacific region. The satellite projects were named Thaicom by the King of Thailand, His Majesty the King Bhumibol Adulyadej, as a symbol of the linkage between Thailand and modern communications technology.',
-    status: 'Active Member'
+    status: 'NOT A MEMBER'
   },
   {
     name: 'Telstar',
     description: 'Telstar is the name of various communications satellites. The first two Telstar satellites were experimental and nearly identical. Telstar 1 launched on top of a Thor-Delta rocket on July 10, 1962. It successfully relayed through space the first television pictures, telephone calls, and telegraph images, and provided the first live transatlantic television feed. Telstar 2 launched May 7, 1963. Telstar 1 and 2—though no longer functional—still orbit the Earth.',
-    status: 'NOT A MEMBER'
+    status: 'Active Member'
   },
   {
     name: 'Athena',

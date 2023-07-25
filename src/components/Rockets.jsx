@@ -1,8 +1,10 @@
+import '../styles/Rockets.css';
+
 const Rockets = () => {
   return (
     <ul>
       <li className="rocket-container">
-        <span>Picture would be here</span>
+        <div>Picture would be here</div>
         <div className="rocket-data">
             <h2 className="name">Rocket Name</h2>
             <p className="description">Description</p>

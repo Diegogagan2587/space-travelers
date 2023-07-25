@@ -1,4 +1,3 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import '../styles/NavigationBar.css';
@@ -9,12 +8,12 @@ const NavigationBar = () => {
     <nav className='navigation-bar'>
       <div className='left'>
         <img src={heroIcon} alt="space travelers icon" className="hero-icon" />
-        <h1>Space Traveler's Hub</h1>
+        <h1>Space Traveler &#39;s Hub </h1>
       </div>
       <ul className='right'>
         <li>
           <NavLink
-            to="/"
+            to="/rockets"
             className={({ isActive}) =>
              isActive ? "active" : ""
             }

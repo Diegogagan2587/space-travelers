@@ -2,6 +2,11 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 .navigation-bar {
   width: 80%;
   margin: 0 auto;

@@ -4,7 +4,7 @@ li {
 
 a {
   text-decoration: none;
-  color: white;
+  color: black;
 }
 
 .active {
@@ -16,8 +16,6 @@ a {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-
-  /* border: 1px solid red; */
 }
 
 .left {

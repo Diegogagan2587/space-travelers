@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <NavigationBar />
       <Routes>
-        <Route path="/" element={<h1>Rockets</h1>} />
+        <Route path="/" element={<Rockets/>} />
         <Route path="/rockets" element={<Rockets/>} />
         <Route path="/missions" element={<Missions />} />
         <Route path="/my-profile" element={<h1>My Profile</h1>} />

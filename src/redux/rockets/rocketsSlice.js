@@ -16,8 +16,7 @@ const rocketsSlice = createSlice({
     initialState: initalState,
     reducers: {
         //reducers go here, below is only an example for adding a rocket;
-        addRocket: (state, action) => {
-            state.push(action.payload);
-        }
     }
 })
+
+export default rocketsSlice.reducer;

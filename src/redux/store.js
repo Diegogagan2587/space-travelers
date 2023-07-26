@@ -6,7 +6,5 @@ const store = configureStore({
         // we need to add our reducers here
     }
 })
-})
 
 export default store;
-```

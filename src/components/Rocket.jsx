@@ -16,7 +16,7 @@ const Rocket = ({ rocketProps }) => {
     } else {
       return (
         <li className="rocket-container">
-          <img src={flickr_images[1]} alt="rocket image" />
+          <img src={flickr_images[0]} alt="rocket image" />
           <div className="rocket-data">
               <h2 className="name">{rocket_name}</h2>
               <p className="description">{description}</p>

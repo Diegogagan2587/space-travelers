@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const initalState = [];
 const endpoint = "https://api.spacexdata.com/v3/rockets";
@@ -11,6 +11,8 @@ const fetchRockets = async () => {
 
 fetchRockets().then(data => console.log(data));
 
+const getRockets = createAsyncThunk("rockets/getRockets",fetchRockets);
+
 const rocketsSlice = createSlice({
     name: "rockets",
     initialState: initalState,
@@ -20,3 +22,4 @@ const rocketsSlice = createSlice({
 })
 
 export default rocketsSlice.reducer;
+export getRockets;

@@ -1,23 +1,16 @@
 // Path: src/pages/Missions.jsx
 
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { joinMission } from '../redux/missions/missionsSlice';
-
 import '../styles/Missions.css';
 
 const Missions = () => {
   const dispatch = useDispatch();
   const missions = useSelector(state => state.missions);
 
-  // useEffect(() => {
-  //   console.log(missions.missions);
-  // }, [missions]);
-
-  const handleJoinBtn = (e) => {
-    e.preventDefault();
-    dispatch(joinMission(e.target.id));
-
+  const handleJoinBtn = (id) => {
+    dispatch(joinMission(id));
+    console.log(id);
   }
 
   return (
@@ -46,7 +39,7 @@ const Missions = () => {
               </div>
               <div className='fourth-column btn'>
                 <button className={hideLeaveMissionBtn}>Leave Mission</button>
-                <button className={hideJoinMissionBtn} id={mission.id} onClick={handleJoinBtn}>Join Mission</button>
+                <button className={hideJoinMissionBtn} onClick={() => handleJoinBtn(mission.id)}>Join Mission</button>
               </div>
             </div>
           )

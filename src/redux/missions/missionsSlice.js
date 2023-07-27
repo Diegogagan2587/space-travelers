@@ -20,27 +20,31 @@ const fetchMissionsAsync = async () => {
 
 export const fetchMissions = createAsyncThunk("missions/fetchMissions", fetchMissionsAsync);
 
-
-
 const missionsSlice = createSlice({
   name: "missions",
   initialState,
   reducers: {
     joinMission: (state, action) => {
       const missionId = action.payload;
-      const missionToJoin = state.missions.find((mission) => mission.id === missionId);
-      console.log(missionId);
-
-      if (missionToJoin) {
-        missionToJoin.status = true;
-      }
+      const updatedMissions = state.missions.map((mission) => {
+        if (mission.id === missionId) {
+          return {
+            ...mission,
+            status: true,
+          };
+        }
+        return mission;
+      });
+      state.missions = updatedMissions;
+      // console.log(state.missions);
     },
   },
+
   extraReducers: (builder) => {
     builder.addCase(fetchMissions.fulfilled, (state, action) => {
       const allMissions = action.payload; 
       const firstFiveMissions = allMissions.slice(0, 5);
-      
+
       const simplifiedMissions = firstFiveMissions.map((mission, index) => {
         return {
           id: index,
@@ -49,7 +53,6 @@ const missionsSlice = createSlice({
           status: false,
         };
       });
-
       state.missions = simplifiedMissions;
     });
   },
@@ -58,4 +61,3 @@ const missionsSlice = createSlice({
 
 export const { joinMission } = missionsSlice.actions;
 export default missionsSlice.reducer;
-

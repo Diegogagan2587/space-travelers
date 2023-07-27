@@ -26,10 +26,23 @@ const missionsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchMissions.fulfilled, (state, action) => {
-      state.missions = action.payload;
+      const allMissions = action.payload; 
+      const firstFiveMissions = allMissions.slice(0, 5);
+      
+      const simplifiedMissions = firstFiveMissions.map((mission) => {
+        return {
+          name: mission.mission_name,
+          description: mission.description,
+          status: false,
+        };
+      });
+
+      state.missions = simplifiedMissions;
     });
   },
 });
+
+
 
 export default missionsSlice.reducer;
 export { fetchMissions };

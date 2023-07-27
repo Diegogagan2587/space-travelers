@@ -7,8 +7,8 @@ const MyProfile = () => {
   console.log('missions = ', missions)
   return (
     <div className="my-profile-container">
-      <div className="joined-missions-container">
-        <ul className="reserved-missions-container">
+      <div className="reserved-rockets-container">
+        <ul className="rockets-list">
           <h2>My Missions</h2>
           {missions.filter((mission) => mission.reserved).map((mission) => {
             { return <li key={mission.id}>{mission.name}</li> }

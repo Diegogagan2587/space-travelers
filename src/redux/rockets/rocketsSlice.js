@@ -28,7 +28,7 @@ const rocketsSlice = createSlice({
         return { ...rocket, reserved: false };
       });
       state.splice(0, state.length, ...newState);
-    }
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(getRockets.fulfilled, (state, action) => {
@@ -50,5 +50,5 @@ const rocketsSlice = createSlice({
 });
 
 export { getRockets };
-export const { reserveRocket } = rocketsSlice.actions;
+export const { reserveRocket, cancelReservation } = rocketsSlice.actions;
 export default rocketsSlice.reducer;

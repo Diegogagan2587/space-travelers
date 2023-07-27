@@ -1,5 +1,21 @@
+.rockets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 2.5%;
+  padding-top: 2.5%;
+  border-top: 2px solid gray;
+}
+
 .rocket-container {
   display: flex;
   align-items: center;
   gap: 2%;
+}
+
+.rocket-container img {
+  min-width: 25%;
+  width: 30%;
 }

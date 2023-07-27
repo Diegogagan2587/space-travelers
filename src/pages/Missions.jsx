@@ -1,29 +1,37 @@
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+// Path: src/pages/Missions.jsx
 
+import { useDispatch, useSelector } from 'react-redux';
+import { joinMission, leaveMission } from '../redux/missions/missionsSlice';
 import '../styles/Missions.css';
 
 const Missions = () => {
+  const dispatch = useDispatch();
   const missions = useSelector(state => state.missions);
 
-  useEffect(() => {
-    console.log(missions.missions);
-  }, [missions]);
+  const handleJoinBtn = (id) => {
+    dispatch(joinMission(id));
+  }
+
+  const handleLeaveBtn = (id) => {
+    dispatch(leaveMission(id));
+  }
 
   return (
     <div className="missions">
+
       <div className="head">
         <span className='first-column'>Mission</span>
         <span className='second-column'>Description</span>
         <span className='third-column'>Status</span>
         <span className='fourth-column'></span>
       </div>
+
       <div className="missions-list">
         {missions.missions.map((mission, index) => {
-          let memberStatus = mission.status === true ? 'active-member' : 'not-active-member';
-          let memberStatusValue = mission.status === true ? 'Active Member' : 'NOT A MEMBER';
-          let hideJoinMissionBtn = mission.status === true ? 'hide' : '';
-          let hideLeaveMissionBtn = mission.status === false ? 'hide' : '';
+          let memberStatus = mission.reserved === true ? 'active-member' : 'not-active-member';
+          let memberStatusValue = mission.reserved === true ? 'Active Member' : 'NOT A MEMBER';
+          let hideJoinMissionBtn = mission.reserved === true ? 'hide' : '';
+          let hideLeaveMissionBtn = mission.reserved === false ? 'hide' : '';
 
           return (
             <div className="mission" key={index}>
@@ -35,13 +43,14 @@ const Missions = () => {
                 </div>
               </div>
               <div className='fourth-column btn'>
-                <button className={hideLeaveMissionBtn}>Leave Mission</button>
-                <button className={hideJoinMissionBtn}>Join Mission</button>
+                <button className={hideLeaveMissionBtn} onClick={() => handleLeaveBtn(mission.id)}>Leave Mission</button>
+                <button className={hideJoinMissionBtn} onClick={() => handleJoinBtn(mission.id)}>Join Mission</button>
               </div>
             </div>
           )
         })}
       </div>
+      
     </div>
   )
 }

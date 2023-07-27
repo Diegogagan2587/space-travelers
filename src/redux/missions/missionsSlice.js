@@ -1,3 +1,5 @@
+// Path: src/redux/missions/missionsSlice.js
+
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const URL = "https://api.spacexdata.com/v3/missions";
@@ -5,7 +7,6 @@ const URL = "https://api.spacexdata.com/v3/missions";
 const initialState = {
   missions: [],
 };
-
 
 const fetchMissionsAsync = async () => {
   try {
@@ -17,33 +18,58 @@ const fetchMissionsAsync = async () => {
   }
 };
 
-const fetchMissions = createAsyncThunk("missions/fetchMissions", fetchMissionsAsync);
-
+export const fetchMissions = createAsyncThunk("missions/fetchMissions", fetchMissionsAsync);
 
 const missionsSlice = createSlice({
   name: "missions",
   initialState,
-  reducers: {},
+  reducers: {
+    joinMission: (state, action) => {
+      const missionId = action.payload;
+      const updatedMissions = state.missions.map((mission) => {
+        if (mission.id === missionId) {
+          return {
+            ...mission,
+            reserved: true,
+          };
+        }
+        return mission;
+      });
+      state.missions = updatedMissions;
+    },
+    leaveMission: (state, action) => {
+      const missionId = action.payload;
+      const updatedMissions = state.missions.map((mission) => {
+        if (mission.id === missionId) {
+          return {
+            ...mission,
+            reserved: false,
+          };
+        }
+        return mission;
+      });
+      state.missions = updatedMissions;
+    }
+  },
+
   extraReducers: (builder) => {
     builder.addCase(fetchMissions.fulfilled, (state, action) => {
       const allMissions = action.payload; 
       const firstFiveMissions = allMissions.slice(0, 5);
-      
-      const simplifiedMissions = firstFiveMissions.map((mission) => {
+
+      const simplifiedMissions = firstFiveMissions.map((mission, index) => {
         return {
+          id: index,
           name: mission.mission_name,
           description: mission.description,
-          status: false,
+          reserved: false,
         };
       });
-
       state.missions = simplifiedMissions;
     });
   },
 });
 
 
-
+export const { joinMission, leaveMission } = missionsSlice.actions;
 export default missionsSlice.reducer;
-export { fetchMissions };
-

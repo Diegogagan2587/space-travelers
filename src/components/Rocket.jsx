@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { reserveRocket } from '../redux/rockets/rocketsSlice';
 
 const Rocket = ({ rocketProps }) => {
     const { rocket_name, flickr_images , isReserved=false, description} = rocketProps;

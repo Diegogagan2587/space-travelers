@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import { reserveRocket } from '../redux/rockets/rocketsSlice';
+import { useDispatch } from 'react-redux';
 
 const Rocket = ({ rocketProps }) => {
     const { rocket_name, flickr_images , isReserved=false, description} = rocketProps;
+    const dispatch = useDispatch();
     if(isReserved){
       return (
         <li className="rocket-container">

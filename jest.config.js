@@ -1,5 +1,11 @@
 module.exports = {
-    verbose: true,
-    moduleFileExtensions: ['js', 'jsx', 'json', 'node'],
+    transform: {
+      '^.+\\.jsx?$': 'babel-jest',
+    },
+    moduleNameMapper: {
+      '^@/(.*)$': '<rootDir>/src/$1',
+    },
+    testEnvironment: 'jsdom',
+    transformIgnorePatterns: ['node_modules/(?!(lodash-es)/)'],
   };
   

@@ -1,17 +1,17 @@
 import PropTypes from 'prop-types';
-import { reserveRocket } from '../redux/rockets/rocketsSlice';
+import { reserveRocket, cancelReservation } from '../redux/rockets/rocketsSlice';
 import { useDispatch } from 'react-redux';
 
 const Rocket = ({ rocketProps }) => {
   const {
     rocket_name,
     flickr_images,
-    isReserved = false,
+    reserved = false,
     description,
     id,
   } = rocketProps;
   const dispatch = useDispatch();
-  if (isReserved) {
+  if (reserved) {
     return (
       <li className="rocket-container">
         <img src={flickr_images[0]} alt="rocket image" />
@@ -20,7 +20,7 @@ const Rocket = ({ rocketProps }) => {
           <p className="description">{description}</p>
           <button
             className="cancel-btn"
-            onClick={() => dispatch(reserveRocket(id))}
+            onClick={() => dispatch(cancelReservation(id))}
           >
             Cancel Reservation
           </button>
@@ -54,7 +54,7 @@ Rocket.propTypes = {
     rocket_name: PropTypes.string.isRequired,
     rocket_type: PropTypes.string.isRequired,
     flickr_images: PropTypes.arrayOf(PropTypes.string).isRequired,
-    isReserved: PropTypes.bool,
+    reserved: PropTypes.bool,
     description: PropTypes.string.isRequired,
   }).isRequired,
 };

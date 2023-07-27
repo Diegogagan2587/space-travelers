@@ -23,12 +23,18 @@ const missionsArray = [
 ];
 
 const Missions = () => {
+
   const dispatch = useDispatch();
   const missions = useSelector(state => state.missions);
 
   useEffect(() => {
     dispatch(fetchMissions());
-  }, [fetchMissions]);
+  }, []);
+
+  useEffect(() => {
+    // console.log(missions)
+    console.log(missions.missions);
+  }, [missions]);
 
 
 

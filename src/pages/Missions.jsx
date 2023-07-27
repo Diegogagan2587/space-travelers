@@ -1,19 +1,23 @@
+// Path: src/pages/Missions.jsx
+
 import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { joinMission } from '../redux/missions/missionsSlice';
 
 import '../styles/Missions.css';
 
 const Missions = () => {
+  const dispatch = useDispatch();
   const missions = useSelector(state => state.missions);
 
-  useEffect(() => {
-    console.log(missions.missions);
-  }, [missions]);
+  // useEffect(() => {
+  //   console.log(missions.missions);
+  // }, [missions]);
 
   const handleJoinBtn = (e) => {
     e.preventDefault();
-    console.log(e.target.id);
+    dispatch(joinMission(e.target.id));
+
   }
 
   return (

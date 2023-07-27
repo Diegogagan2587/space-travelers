@@ -1,3 +1,5 @@
+// Path: src/redux/missions/missionsSlice.js
+
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const URL = "https://api.spacexdata.com/v3/missions";
@@ -16,7 +18,7 @@ const fetchMissionsAsync = async () => {
   }
 };
 
-const fetchMissions = createAsyncThunk("missions/fetchMissions", fetchMissionsAsync);
+export const fetchMissions = createAsyncThunk("missions/fetchMissions", fetchMissionsAsync);
 
 
 
@@ -54,7 +56,6 @@ const missionsSlice = createSlice({
 });
 
 
-export const { joinMission } = missionsSlice.reducer;
+export const { joinMission } = missionsSlice.actions;
 export default missionsSlice.reducer;
-export { fetchMissions };
 

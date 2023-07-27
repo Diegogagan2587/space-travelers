@@ -30,7 +30,7 @@ const missionsSlice = createSlice({
         if (mission.id === missionId) {
           return {
             ...mission,
-            status: true,
+            reserved: true,
           };
         }
         return mission;
@@ -50,7 +50,7 @@ const missionsSlice = createSlice({
           id: index,
           name: mission.mission_name,
           description: mission.description,
-          status: false,
+          reserved: false,
         };
       });
       state.missions = simplifiedMissions;

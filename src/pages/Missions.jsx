@@ -10,7 +10,6 @@ const Missions = () => {
 
   const handleJoinBtn = (id) => {
     dispatch(joinMission(id));
-    console.log(id);
   }
 
   return (
@@ -23,10 +22,10 @@ const Missions = () => {
       </div>
       <div className="missions-list">
         {missions.missions.map((mission, index) => {
-          let memberStatus = mission.status === true ? 'active-member' : 'not-active-member';
-          let memberStatusValue = mission.status === true ? 'Active Member' : 'NOT A MEMBER';
-          let hideJoinMissionBtn = mission.status === true ? 'hide' : '';
-          let hideLeaveMissionBtn = mission.status === false ? 'hide' : '';
+          let memberStatus = mission.reserved === true ? 'active-member' : 'not-active-member';
+          let memberStatusValue = mission.reserved === true ? 'Active Member' : 'NOT A MEMBER';
+          let hideJoinMissionBtn = mission.reserved === true ? 'hide' : '';
+          let hideLeaveMissionBtn = mission.reserved === false ? 'hide' : '';
 
           return (
             <div className="mission" key={index}>

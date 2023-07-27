@@ -8,9 +8,8 @@ const MyProfile = () => {
       <div className="reserved-rockets-container">
         <ul className="rockets-list">
             <h2>My Rockets</h2>
-            {rockets.map((rocket) => {
-                if(rocket.reserved) {return <li key={rocket.id}>{rocket.rocket_name}</li>}
-                return null
+            {rockets.filter((rocket)=>rocket.reserved).map((rocket) => {
+               {return <li key={rocket.id}>{rocket.rocket_name}</li>}
             })}
         </ul>
       </div>

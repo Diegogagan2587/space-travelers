@@ -5,6 +5,9 @@ const MyProfile = () => {
     console.log('rockets = ',rockets)
   return (
     <div className="my-profile-container">
+        <div className="joined-missions-container">
+            {/* Add your missons logic here */}
+        </div>
       <div className="reserved-rockets-container">
         <ul className="rockets-list">
             <h2>My Rockets</h2>

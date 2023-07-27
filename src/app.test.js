@@ -1,4 +1,5 @@
 // tests/sample.test.js
+/* eslint-disable no-unused-vars */
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 

@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
-import { reserveRocket, cancelReservation } from '../redux/rockets/rocketsSlice';
+import {
+  reserveRocket,
+  cancelReservation,
+} from '../redux/rockets/rocketsSlice';
 import { useDispatch } from 'react-redux';
 
 const Rocket = ({ rocketProps }) => {
@@ -11,29 +14,24 @@ const Rocket = ({ rocketProps }) => {
     id,
   } = rocketProps;
   const dispatch = useDispatch();
-  if (reserved) {
-    return (
-      <li className="rocket-container">
-        <img src={flickr_images[0]} alt="rocket image" />
-        <div className="rocket-data">
-          <h2 className="name">{rocket_name}</h2>
-          <p className="description">{description}</p>
+  return (
+    <li className="rocket-container">
+      <img src={flickr_images[0]} alt="rocket image" />
+      <div className="rocket-data">
+        <h2 className="name">{rocket_name}</h2>
+        <p className="description">
+          {reserved&&( <span className="reserved-badge">Reserved</span> )}
+          {description}
+          </p>
+        {reserved && (
           <button
             className="cancel-btn"
             onClick={() => dispatch(cancelReservation(id))}
           >
             Cancel Reservation
           </button>
-        </div>
-      </li>
-    );
-  } else {
-    return (
-      <li className="rocket-container">
-        <img src={flickr_images[0]} alt="rocket image" />
-        <div className="rocket-data">
-          <h2 className="name">{rocket_name}</h2>
-          <p className="description">{description}</p>
+        )}
+        {!reserved && (
           <button
             className="reserve-btn"
             onClick={() => {
@@ -42,10 +40,10 @@ const Rocket = ({ rocketProps }) => {
           >
             Reserve Rocket
           </button>
-        </div>
-      </li>
-    );
-  }
+        )}
+      </div>
+    </li>
+  );
 };
 
 Rocket.propTypes = {

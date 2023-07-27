@@ -1,6 +1,5 @@
 import  { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchMissions } from '../redux/missions/missionsSlice';
+import { useSelector } from 'react-redux';
 
 import '../styles/Missions.css';
 
@@ -23,16 +22,9 @@ const missionsArray = [
 ];
 
 const Missions = () => {
-
-  const dispatch = useDispatch();
   const missions = useSelector(state => state.missions);
 
   useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
-
-  useEffect(() => {
-    // console.log(missions)
     console.log(missions.missions);
   }, [missions]);
 

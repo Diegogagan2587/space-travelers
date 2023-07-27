@@ -1,7 +1,7 @@
 // Path: src/pages/Missions.jsx
 
 import { useDispatch, useSelector } from 'react-redux';
-import { joinMission } from '../redux/missions/missionsSlice';
+import { joinMission, leaveMission } from '../redux/missions/missionsSlice';
 import '../styles/Missions.css';
 
 const Missions = () => {
@@ -10,6 +10,10 @@ const Missions = () => {
 
   const handleJoinBtn = (id) => {
     dispatch(joinMission(id));
+  }
+
+  const handleLeaveBtn = (id) => {
+    dispatch(leaveMission(id));
   }
 
   return (
@@ -37,7 +41,7 @@ const Missions = () => {
                 </div>
               </div>
               <div className='fourth-column btn'>
-                <button className={hideLeaveMissionBtn}>Leave Mission</button>
+                <button className={hideLeaveMissionBtn} onClick={() => handleLeaveBtn(mission.id)}>Leave Mission</button>
                 <button className={hideJoinMissionBtn} onClick={() => handleJoinBtn(mission.id)}>Join Mission</button>
               </div>
             </div>

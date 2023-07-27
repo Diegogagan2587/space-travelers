@@ -1,3 +1,6 @@
+import  { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import '../styles/Missions.css';
 
 const missionsArray = [
@@ -19,6 +22,14 @@ const missionsArray = [
 ];
 
 const Missions = () => {
+  const missions = useSelector(state => state.missions);
+
+  useEffect(() => {
+    console.log(missions.missions);
+  }, [missions]);
+
+
+
   return (
     <div className="missions">
       <div className="head">

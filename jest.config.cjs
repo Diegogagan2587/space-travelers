@@ -7,5 +7,6 @@ module.exports = {
     },
     testEnvironment: 'jest-environment-jsdom',
     transformIgnorePatterns: ['node_modules/(?!(lodash-es)/)'],
+    setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
   };
   

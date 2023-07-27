@@ -7,22 +7,38 @@ const initialState = {
   missions: [],
 };
 
-const fetchData = createAsyncThunk('missions/getMissions', async () => {
-  const response = await axios.get(URL);
-  const data = await response.json();
-  return data;
-});
+// const fetchMissions = createAsyncThunk('missions/fetchMissions', async () => {
+//   const response = await axios.get(URL);
+//   const data = await response.json();
+//   console.log(data);
+//   return data;
+// });
 
-const getMissions = createSlice({
+const fetchMissionsAsync = async () => {
+  try {
+    const response = await fetch(URL);
+    const data = await response.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    throw Error(error);
+  }
+};
+
+const fetchMissions = createAsyncThunk("missions/fetchMissions", fetchMissionsAsync);
+
+
+const missionsSlice = createSlice({
   name: "missions",
   initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchData.fulfilled, (state, action) => {
+    builder.addCase(fetchMissions.fulfilled, (state, action) => {
       state.missions = action.payload;
     });
   },
 });
 
-export default getMissions.reducer;
+export default missionsSlice.reducer;
+export { fetchMissions };
 

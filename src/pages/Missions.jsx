@@ -1,3 +1,7 @@
+import  { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchMissions } from '../redux/missions/missionsSlice';
+
 import '../styles/Missions.css';
 
 const missionsArray = [
@@ -19,6 +23,15 @@ const missionsArray = [
 ];
 
 const Missions = () => {
+  const dispatch = useDispatch();
+  const missions = useSelector(state => state.missions);
+
+  useEffect(() => {
+    dispatch(fetchMissions());
+  }, [fetchMissions]);
+
+
+
   return (
     <div className="missions">
       <div className="head">

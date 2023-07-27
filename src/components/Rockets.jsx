@@ -11,7 +11,7 @@ const Rockets = () => {
     dispatch(getRockets());
   },[dispatch]);
   return (
-    <ul>
+    <ul className="rockets-list">
       {
         rockets.map((rocket)=> <Rocket key={rocket.id} rocketProps={rocket}></Rocket> )
       }

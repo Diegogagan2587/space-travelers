@@ -1,6 +1,6 @@
 
 import '../styles/Rockets.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Rocket from './Rocket';
 

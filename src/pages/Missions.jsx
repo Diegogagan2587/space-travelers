@@ -39,10 +39,11 @@ const Missions = () => {
         <span className='fourth-column'></span>
       </div>
       <div className="missions-list">
-        {missionsArray.map((mission, index) => {
-          let memberStatus = mission.status === 'Active Member' ? 'active-member' : 'not-active-member';
-          let hideJoinMissionBtn = mission.status === 'Active Member' ? 'hide' : '';
-          let hideLeaveMissionBtn = mission.status === 'NOT A MEMBER' ? 'hide' : '';
+        {missions.missions.map((mission, index) => {
+          let memberStatus = mission.status === true ? 'active-member' : 'not-active-member';
+          let memberStatusValue = mission.status === true ? 'Active Member' : 'NOT A MEMBER';
+          let hideJoinMissionBtn = mission.status === true ? 'hide' : '';
+          let hideLeaveMissionBtn = mission.status === false ? 'hide' : '';
 
           return (
           <div className="mission" key={index}>
@@ -50,7 +51,7 @@ const Missions = () => {
             <div className='second-column'>{mission.description}</div>
             <div className="third-column mission-status">
               <div className={memberStatus}>
-                {mission.status}
+                {memberStatusValue}
               </div>
             </div>
             <div className='fourth-column btn'>

@@ -5,7 +5,7 @@ module.exports = {
     moduleNameMapper: {
       '^@/(.*)$': '<rootDir>/src/$1',
     },
-    testEnvironment: 'jsdom',
+    testEnvironment: 'jest-environment-jsdom',
     transformIgnorePatterns: ['node_modules/(?!(lodash-es)/)'],
   };
   

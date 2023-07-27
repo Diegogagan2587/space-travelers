@@ -29,7 +29,7 @@ const Missions = () => {
 
   useEffect(() => {
     dispatch(fetchMissions());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     // console.log(missions)

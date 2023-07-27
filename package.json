@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "jest",
+    "test": "jest"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
@@ -24,12 +24,14 @@
     "@babel/core": "^7.22.9",
     "@babel/eslint-parser": "^7.22.9",
     "@babel/plugin-syntax-jsx": "^7.22.5",
+    "@babel/preset-env": "^7.22.9",
     "@babel/preset-react": "^7.22.5",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^14.0.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
+    "babel-jest": "^29.6.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-plugin-import": "^2.27.5",

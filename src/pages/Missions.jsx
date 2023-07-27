@@ -18,12 +18,14 @@ const Missions = () => {
 
   return (
     <div className="missions">
+
       <div className="head">
         <span className='first-column'>Mission</span>
         <span className='second-column'>Description</span>
         <span className='third-column'>Status</span>
         <span className='fourth-column'></span>
       </div>
+
       <div className="missions-list">
         {missions.missions.map((mission, index) => {
           let memberStatus = mission.reserved === true ? 'active-member' : 'not-active-member';
@@ -48,6 +50,7 @@ const Missions = () => {
           )
         })}
       </div>
+      
     </div>
   )
 }

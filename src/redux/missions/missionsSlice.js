@@ -6,7 +6,6 @@ const initialState = {
   missions: [],
 };
 
-
 const fetchMissionsAsync = async () => {
   try {
     const response = await fetch(URL);
@@ -19,6 +18,8 @@ const fetchMissionsAsync = async () => {
 
 const fetchMissions = createAsyncThunk("missions/fetchMissions", fetchMissionsAsync);
 
+const joinMission = () => {};
+
 
 const missionsSlice = createSlice({
   name: "missions",
@@ -29,8 +30,9 @@ const missionsSlice = createSlice({
       const allMissions = action.payload; 
       const firstFiveMissions = allMissions.slice(0, 5);
       
-      const simplifiedMissions = firstFiveMissions.map((mission) => {
+      const simplifiedMissions = firstFiveMissions.map((mission, index) => {
         return {
+          id: index,
           name: mission.mission_name,
           description: mission.description,
           status: false,

@@ -14,6 +14,11 @@ const getRockets = createAsyncThunk('rockets/getRockets', fetchRockets);
 const rocketsSlice = createSlice({
   name: 'rockets',
   initialState,
+  reducers:{
+    reserveRocket: (state, action)=>{
+      return state.map((rocket)=>console.log(rocket));
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(getRockets.fulfilled, (state, action) => {
       const newState = []

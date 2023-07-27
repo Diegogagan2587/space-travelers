@@ -22,6 +22,13 @@ const rocketsSlice = createSlice({
       });
       state.splice(0, state.length, ...newState);
     },
+    cancelReservation: (state, action) => {
+      const newState = state.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: false };
+      });
+      state.splice(0, state.length, ...newState);
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(getRockets.fulfilled, (state, action) => {

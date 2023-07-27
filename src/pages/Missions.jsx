@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { joinMission } from '../redux/missions/missionsSlice';
 
 import '../styles/Missions.css';
 
@@ -9,6 +10,11 @@ const Missions = () => {
   useEffect(() => {
     console.log(missions.missions);
   }, [missions]);
+
+  const handleJoinBtn = (e) => {
+    e.preventDefault();
+    console.log(e.target.id);
+  }
 
   return (
     <div className="missions">
@@ -36,7 +42,7 @@ const Missions = () => {
               </div>
               <div className='fourth-column btn'>
                 <button className={hideLeaveMissionBtn}>Leave Mission</button>
-                <button className={hideJoinMissionBtn}>Join Mission</button>
+                <button className={hideJoinMissionBtn} id={mission.id} onClick={handleJoinBtn}>Join Mission</button>
               </div>
             </div>
           )

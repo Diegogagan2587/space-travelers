@@ -50,6 +50,7 @@ const Rocket = ({ rocketProps }) => {
 
 Rocket.propTypes = {
   rocketProps: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     rocket_name: PropTypes.string.isRequired,
     rocket_type: PropTypes.string.isRequired,
     flickr_images: PropTypes.arrayOf(PropTypes.string).isRequired,

@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import Rocket from '../components/Rocket';
 import store from '../redux/store';
 
-describe('Renders Content', () => {
+describe('Each Rocket should render the next content', () => {
   test('Should there be a Reserve Rocket button', () => {
     const rocketData = {
       rocket_name: 'Diego Rocket',

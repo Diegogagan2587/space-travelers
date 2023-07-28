@@ -10,8 +10,12 @@
 }
 
 .missions {
-  width: 80%;
   margin: 0 auto;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 2.5%;
+  padding-top: 2.5%;
+  border-top: 1px solid gray;
 }
 
 .head {

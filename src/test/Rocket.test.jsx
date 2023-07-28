@@ -25,6 +25,23 @@ describe('Renders Content', () => {
     const reserveBtn = screen.getByText('Reserve Rocket');
     expect(reserveBtn).toBeInTheDocument();
   });
+  test('Badge "Reserved" should appear if the rocket is reserved', () => {
+    const rocketData = {
+      rocket_name: 'Diego Rocket',
+      flickr_images: ['#'],
+      reserved: true,
+      description: 'Rocket create to test the React Component Rocket.jsx',
+      id: 27,
+      rocket_type: 'Cheaper Rocket',
+    };
+    const component = render(
+      <Provider store={store}>
+        <Rocket rocketProps={rocketData} />
+      </Provider>
+    );
+    const reservedBadge = screen.getByText('Reserved');
+    expect(reservedBadge).toBeInTheDocument();
+  });
   test('If Reserved, Should render a Cancelation Button', () => {
     const rocketData = {
       rocket_name: 'Diego Rocket',

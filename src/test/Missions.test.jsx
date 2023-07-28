@@ -46,5 +46,38 @@ describe('Missions Component', () => {
     expect(leaveButton).not.toHaveClass('hide');
   });
 
-  
+  it('dispatches the joinMission action when join button is clicked', () => {
+    // Define a mock state that resembles your real store state
+    const initialState = {
+      missions: {
+        missions: [
+          {
+            id: 1,
+            name: 'Mission 1',
+            description: 'Description for Mission 1',
+            reserved: false,
+          },
+        ],
+      },
+    };
+
+    // Create the mock store with the initial state
+    const store = mockStore(initialState);
+
+    // Render the component with the mocked store
+    render(
+      <Provider store={store}>
+        <Missions />
+      </Provider>
+    );
+
+    // Find the join button and click it
+    const joinButton = screen.getByText('Join Mission');
+    fireEvent.click(joinButton);
+
+    // Check that the joinMission action was dispatched with the correct mission ID
+    const actions = store.getActions();
+    expect(actions).toHaveLength(1);
+    expect(actions[0]).toEqual({ type: 'missions/joinMission', payload: 1 });
+  });
 });

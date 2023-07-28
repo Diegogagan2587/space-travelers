@@ -2,3 +2,86 @@
   width: 100%;
   margin: 50px auto;
 }
+
+.hide {
+  display: none;
+}
+
+.missions {
+  /* border: 1px solid green; */
+  width: 80%;
+  margin: 0 auto;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+
+span {
+  border: 1px solid gray;
+}
+
+.first-column,
+.second-column,
+.third-column,
+.fourth-column {
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+.first-column {
+  width: 10%;
+}
+
+.second-column {
+  width: 60%;
+}
+
+.third-column {
+  width: 15%;
+}
+
+.mission-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fourth-column {
+  width: 15%;
+}
+
+.mission {
+  display: flex;
+}
+
+.fourth-column.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  border: 1px solid gray;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.active-member {
+  background-color: aqua;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.not-active-member {
+  background-color: gray;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.join-mission {
+  display: block;
+}

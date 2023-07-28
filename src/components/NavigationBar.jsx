@@ -2,14 +2,11 @@ import { NavLink } from 'react-router-dom';
  /* eslint-disable-next-line */
  import React from 'react';
 
-// import '../styles/NavigationBar.css';
-// import heroIcon from '../assets/planet.png';
-
 const NavigationBar = () => {
   return (
     <nav className='navigation-bar'>
       <div className='left'>
-        <img src="" alt="space travelers icon" className="hero-icon" />
+        <img src="https://i.imgur.com/vs7k8UQ.png" alt="space travelers icon" className="hero-icon" />
         <h1>Space Traveler &#39;s Hub </h1>
       </div>
       <ul className='right'>

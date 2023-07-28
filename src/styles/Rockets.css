@@ -12,13 +12,13 @@
 
 .rocket-container {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 2%;
 }
 
 .rocket-container img {
   min-width: 25%;
-  width: 30%;
+  width: 25%;
 }
 
 .rocket-container .rocket-data {

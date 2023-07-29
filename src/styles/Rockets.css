@@ -1,0 +1,51 @@
+
+.rockets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 8%;
+  margin-right: 8%;
+  margin-top: 2.5%;
+  padding-top: 2.5%;
+  border-top: 2px solid gray;
+}
+
+.rocket-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2%;
+}
+
+.rocket-container img {
+  min-width: 25%;
+  width: 25%;
+}
+
+.rocket-container .rocket-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25vw;
+}
+
+.rocket-data p {
+  line-height: 130%;
+}
+
+.rocket-container button {
+  padding: 1%;
+  background-color: #0c81fc;
+  color: white;
+  border: 0;
+  border-radius: 3px;
+}
+
+.reserved-badge {
+  padding: 0.5%;
+  background-color: #24acbc;
+  color: white;
+  font-weight: bolder;
+  font-size: 70%;
+  border-radius: 3px;
+  margin-right: 2%;
+}

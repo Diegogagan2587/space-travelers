@@ -16,6 +16,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -50,6 +51,16 @@
 - **The page is built with React and Redux**
 - **The page consumes the Space X API**
 - **The user can book a rocket or a mission and also cancel them**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+> would you like to see a demo? No worries, the link is just below:
+
+- [Click for live demo](https://diegogagan2587.github.io/space-travelers/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

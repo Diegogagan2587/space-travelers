@@ -8,12 +8,9 @@ import App from './App.jsx';
 import store from './redux/store.js';
 import './index.css';
 
-
-
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter  basename="/space-travelers/">
       <Provider store={store}>
         <App />
       </Provider>
